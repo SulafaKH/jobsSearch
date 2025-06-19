@@ -1,0 +1,553 @@
+@import "./variables";
+  
+  * {
+    font-family: " monospace";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+  
+    &::-webkit-scrollbar {
+      width: 1rem;
+      height: 0.5rem;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: $main-color;
+    }
+  
+    &::selection {
+      background-color: $main-color;
+      color: $white;
+    }
+  }
+  
+  html {
+    font-size: 62.5%;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: $light-bg;
+    height: 700px;
+  }
+  
+  section {
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  .heading {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 3rem;
+    color: $black;
+    padding: 1rem 0;
+  }
+  
+  .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: $white;
+    background-color: $main-color;
+    border-radius: 6rem;
+    text-transform: capitalize;
+    text-align: center;
+  
+    &:hover {
+      background-color: $black;
+    }
+  }
+  
+  .flex-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $white;
+    box-shadow: $box-shadow;
+    z-index: 1000;
+  
+    .flex {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  
+      .logo {
+        font-size: 2.5rem;
+        color: $black;
+  
+        i {
+          margin-right: 0.5rem;
+          color: $light-color;
+        }
+      }
+  
+      .navbar {
+        a {
+          display: inline-block;
+          padding: 1rem 1.5rem;
+          font-size: 1.6rem;
+          color: $light-color;
+          text-transform: capitalize;
+  
+          &:hover {
+            color: $main-color;
+          }
+        }
+      }
+    }
+  }
+  
+  #menu-btn {
+    font-size: 3rem;
+    color: $black;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .home-container {
+    background: url("../../dist/images/Job\ hunt\ Customizable\ Isometric\ Illustrations\ _\ Amico\ Style.jfif"), rgba(0, 0, 0, 0.7) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: color;
+  
+    .home {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      form {
+        background-color: $white;
+        width: 50rem;
+        border-radius: 0.5rem;
+        padding: 2rem;
+        text-align: center;
+  
+        h3 {
+          font-size: 2.5rem;
+          color: $black;
+          margin-bottom: 1rem;
+          text-transform: capitalize;
+        }
+  
+        p {
+          text-align: left;
+          font-size: 1.6rem;
+          color: $light-color;
+          padding-top: 1rem;
+        }
+  
+        .input {
+          width: 100%;
+          border-radius: 0.5rem;
+          margin: 1rem 0;
+          background-color: $light-bg;
+          padding: 1.4rem;
+          font-size: 1.8rem;
+          color: $black;
+        }
+      }
+    }
+  }
+  
+  .jobs-container {
+    .box-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 35rem);
+      gap: 1.5rem;
+      align-items: flex-start;
+      justify-content: center;
+  
+      .box {
+        background-color: $white;
+        border-radius: 0.5rem;
+        border: $border;
+        padding: 2rem;
+        overflow-x: hidden;
+  
+        .company {
+          display: flex;
+          align-items: center;
+          gap: 1.5rem;
+          margin-bottom: 1.5rem;
+  
+          img {
+            height: 6rem;
+            width: 6rem;
+            object-fit: contain;
+          }
+  
+          h3 {
+            font-size: 1.8rem;
+            color: $black;
+            text-overflow: ellipsis;
+            overflow-x: hidden;
+            padding-bottom: 0.3rem;
+          }
+  
+          p {
+            color: $light-color;
+            font-size: 1.6rem;
+          }
+        }
+  
+        .job-titel {
+          font-size: 2rem;
+          color: $black;
+          overflow-x: hidden;
+          text-overflow: ellipsis;
+        }
+  
+        .location {
+          padding: 0.7rem 0;
+          font-size: 1.6rem;
+          color: $black;
+        }
+  
+        .tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+          margin: 1.2rem 0;
+  
+          p {
+            padding: 1.2rem;
+            border-radius: 0.5rem;
+            background-color: $light-bg;
+            font-size: 1.6rem;
+            color: $light-color;
+          }
+        }
+  
+        .description {
+          padding: 1.2rem;
+          border: $border;
+          border-radius: 0.5rem;
+          font-size: 1.6rem;
+          color: $light-color;
+          background-color: $light-bg;
+        }
+      }
+    }
+  }
+  
+  .account-form-container {
+    background: url("../../dist/images/Job\ hunt\ Customizable\ Isometric\ Illustrations\ _\ Amico\ Style.jfif"), rgba(0, 0, 0, 0.7) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: color;
+  
+    .account-form {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      form {
+        background-color: $white;
+        border-radius: 0.5rem;
+        padding: 2rem;
+        width: 50rem;
+        text-align: center;
+  
+        h3 {
+          font-size: 2.5rem;
+          color: $black;
+          margin-bottom: 1rem;
+        }
+  
+        .input, select {
+          width: 100%;
+          margin: 1rem 0;
+          font-size: 1.8rem;
+          padding: 1.4rem;
+          background-color: $light-bg;
+          border-radius: 0.5rem;
+          color: $light-color;
+          text-transform: capitalize;
+        }
+  
+        p {
+          padding: 1rem;
+          font-size: 1.6rem;
+          color: $light-color;
+  
+          a {
+            color: $main-color;
+          }
+        }
+      }
+    }
+  }
+  
+  .about-container {
+    background: url("../../dist/images/Job\ hunt\ Customizable\ Isometric\ Illustrations\ _\ Amico\ Style.jfif"), rgba(0, 0, 0, 0.7) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: color;
+  
+    .table-container {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      .box {
+        background-color: $white;
+        width: 50rem;
+        border-radius: 0.5rem;
+        padding: 2rem;
+        text-align: center;
+        align-items: center;
+  
+        h3 {
+          font-size: 2.5rem;
+          color: $black;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+  
+  .box-container.about-us table {
+    margin-bottom: 2rem;
+  }
+  
+  .about-container .table-container table {
+    th {
+      color: $main-color;
+      font-size: 1.6rem;
+      padding: 2rem;
+    }
+  
+    td {
+      font-size: 1.5rem;
+      padding: 1rem;
+      color: $light-color;
+    }
+  }
+  
+  .container {
+    max-width: 1200px;
+    padding: 2rem;
+    margin: 0 auto;
+  }
+  
+  .centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .admin-job-form-container form {
+    max-width: 50rem;
+    margin: 0 auto;
+    background-color: $white;
+    width: 50rem;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    border: $border;
+  
+    h3 {
+      font-size: 2.5rem;
+      color: $black;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+  
+    .box {
+      width: 100%;
+      border-radius: 0.5rem;
+      margin: 1rem 0;
+      background-color: $light-bg;
+      padding: 1.2rem 1.5rem;
+      font-size: 1.8rem;
+      color: $black;
+      text-transform: capitalize;
+    }
+  }
+  
+  .btn-admin {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    padding: 1rem 3rem;
+    background-color: $main-color;
+    color: $white;
+    text-align: center;
+  
+    &:hover {
+      background-color: $black;
+    }
+  }
+  
+  .btn-edit {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    padding: 1rem 3rem;
+    background-color: $blue;
+    color: $white;
+  
+    &:hover {
+      background-color: $black-2;
+    }
+  }
+  
+  .btn-delete {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    padding: 1rem 3rem;
+    background-color: $red;
+    color: $white;
+  
+    &:hover {
+      background-color: $black-2;
+    }
+  }
+  
+  .job_disblay {
+    margin: 2rem 0;
+  
+    .job-disblay-table {
+      width: 100%;
+      text-align: center;
+      border: $border;
+  
+      thead {
+        background-color: $black;
+        color: $white;
+      }
+  
+      th {
+        padding: 1rem;
+        font-size: 2rem;
+      }
+  
+      td {
+        padding: 1rem;
+        font-size: 2rem;
+        border-bottom: $border;
+      }
+    }
+  }
+  
+  .footer {
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 30rem);
+      gap: 1.5rem;
+      justify-content: center;
+      align-items: flex-start;
+  
+      .box {
+        h3 {
+          font-size: 2rem;
+          color: $black;
+          margin: 1rem;
+          padding-bottom: 1rem;
+          text-transform: capitalize;
+        }
+  
+        a {
+          display: block;
+          padding: 1.5rem 0;
+          font-size: 1.6rem;
+          color: $light-color;
+          text-transform: capitalize;
+  
+          i {
+            color: $main-color;
+            margin-right: 0.8rem;
+            transition: 0.2s l;
+          }
+  
+          &:hover i {
+            margin-right: 2rem;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 991px) {
+    html {
+      font-size: 55%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #menu-btn {
+      display: inline-block;
+    }
+  
+    .header .flex .navbar {
+      position: absolute;
+      top: 99%;
+      left: 0;
+      right: 0;
+      border-top: $border;
+      background-color: $white;
+      padding: 1rem 0.5rem;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      transition: 0.2s linear;
+  
+      &.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+  
+      a {
+        display: block;
+        padding: 1.5rem 2rem;
+      }
+    }
+  
+    .job_disblay {
+      overflow-y: scroll;
+  
+      .job-disblay-table {
+        width: 80rem;
+      }
+    }
+  }
+  
+  @media (max-width: 450px) {
+    html {
+      font-size: 50%;
+    }
+  }
